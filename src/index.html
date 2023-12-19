@@ -8,112 +8,52 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Weather App </title>
-    <link rel="stylesheet" href="src/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/index.js"/>  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Weather App</title>
   </head>
-<body>
-    
-      <form class="search-form">
-       <div class="row">
-        <div class="col-2">
-          <input
-            id="search-input"
-           type="Search"
-           placeholder="Type a city.."
-           autofocus="on"
-           autocomplete="off"
-           class="form-control shadow-sm"
-           />
-      </div>
-  <div class="col-1">
-    <input
-     type="submit"
-     value="search"
-     class="search-button"/>
-  </div>
-</form>
-</header>
-<main>
-  <div class="current-weather">
-    <div>
-      <h1 class="current-city" id="current-city">Paris</h1>
-      <p class="current-details">
-        <span id="current-date"></span>Precipitation: <strong>94%</strong><br />
-        Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
-      </p>
-    </div>
-    <div class="current-temperature">
-      <span class="current-temperature-icon">☀️</span
-      ><span class="current-temperature-value" id="current-temperature"
-        >24</span
-      ><span class="current-temperature-unit">°C</span>
-<div class="text-center">
-  <img src="https://i.pinimg.com/originals/cd/66/fe/cd66fec0f1e4f5462a51aa7183f72f4c.gif"class="rounded" alt="rain-emoji" width="120px;">
-</div>
-  <h3>
-     Tuesday, 25 Dec 2024
-  </h3>
-  </ul>
-<br>
-<div class="forcast">
-  <div class="row">
-    <div class="col">
-      <div class="card" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Monday</h5>
-            <p class="card-text">17° 12°</p>
-             <a href="#" class="btn">⛅</a>
-             </div>
-            </div>
+  <body>
+    <div class="weatherApp">
+      <form class="searchCity" id="city">
+        <input
+          type="search"
+          placeholder="Enter a city ..."
+          required
+          id="searchForm"
+          class="searchFormInput"
+        />
+        <input type="submit" value="Search" class="searchFormButton" />
+      </form>
+      <main>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weatherAppCity" id="currentCity">London</h1>
+            <p class="weatherAppDetails">
+              <span id="time"></span>
+              <span id="description"></span>
+              <br />
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind"></strong>
+            </p>
           </div>
-  <div class="col">
-      <div class="card" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Tuesday</h5>
-            <p class="card-text">17°C</p>
-             <a href="#" class="btn">☔</a>
-             </div>
-            </div>
-          </div>
-  <div class="col">
-      <div class="card" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Wednesday</h5>
-            <p class="card-text">17</p>
-             <a href="#" class="btn">🌞</a>
-             </div>
-            </div>
-          </div>
-  <div class="col">
-      <div class="card" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Thursday</h5>
-            <p class="card-text">20° 13°</p>
-             <a href="#" class="btn">⛅</a>
-             </div>
-            </div>
-          </div>
-  <div class="col">
-      <div class="card" style="width: 10rem;">
-        <div class="card-body">
-          <h5 class="card-title">Friday</h5>
-            <p class="card-text">15° 20°</p>
-             <a href="#" class="btn">⚡⛈</a>
-             </div>
-            </div>
+          <div class="weatherAppTemperatureContainer">
+            <div class="weatherAppIcon" id="icon"></div>
+            <div class="weaterAppTemperature" id="temperature">12</div>
+            <div class="weatherAppUnit">°C</div>
           </div>
         </div>
-      <div>
+        <div class="weather-forecast" id="forecast"></div>
+      </main>
         <script src="src/index.js"></script>
-        </html>
-    <footer>
+        <footer>
           Coded By
           <a href="https://github.com/Mashenge305"> Nosipho Buthelezi</a> is <a href="https://github.com/Mashenge305/Weather-App"> open-sourced on Github </a> and <a href="https://aesthetic-youtiao-2c3c7f.netlify.app/"> hosted on Netlify </a>
         </footer>
-  </body>
-</html>
+        </body>
+        </html>
